@@ -13,7 +13,7 @@ class Preferences(context: Context) {
         storage.edit().putString(key, numberParticipants).apply()
     }
 
-    fun getParticipants(key: String): Int {
-        return storage.getInt(key, 0)
+    fun getParticipants(key: String): String {
+        return storage.getString(key, "") ?: ""
     }
 }
