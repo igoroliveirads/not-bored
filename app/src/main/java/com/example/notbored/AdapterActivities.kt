@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 class AdapterActivities(
     private val listActivities: List<ActivityModel>,
     val activitySelected: (ActivityModel) -> Unit
-    ) : RecyclerView.Adapter<AdapterActivities.ActivitiesViewHolder>() {
+) : RecyclerView.Adapter<AdapterActivities.ActivitiesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActivitiesViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.activity_item, parent, false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.activity_item, parent, false)
         return ActivitiesViewHolder(itemView)
     }
 

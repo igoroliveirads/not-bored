@@ -16,7 +16,7 @@ class ActivitiesListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.imageRandom.setOnClickListener {
-            putInfoRandom()
+            handleRandom()
         }
 
         initRecyclerActivities()
@@ -27,31 +27,26 @@ class ActivitiesListActivity : AppCompatActivity() {
         binding.recyclerActivities.setHasFixedSize(true)
         binding.recyclerActivities.adapter =
             AdapterActivities(ActivityList.getActivityList()) { activity ->
-                putInfo(activity)
+                val intent = Intent(this, CategoryDetailActivity::class.java)
+                putExtraInfo(intent, activity)
+                startActivity(intent)
             }
     }
 
-    private fun putInfo(activity: ActivityModel) {
-        val intent = Intent(this, CategoryDetailActivity::class.java)
-        intent.putExtra(Constants.KEY.ID_ACTIVITY, activity.id)
-        intent.putExtra(Constants.KEY.CATEGORY_ACTIVITY, activity.category)
-        intent.putExtra(Constants.KEY.DESCRIPTION_ACTIVITY, activity.description)
-        intent.putExtra(Constants.KEY.PARTICIPANTS_ACTIVITY, activity.participants)
-        intent.putExtra(Constants.KEY.PRICE_ACTIVITY, activity.price)
-        startActivity(intent)
-    }
-
-    private fun putInfoRandom() {
+    private fun handleRandom() {
         val intent = Intent(this, RandomDetailActivity::class.java)
         val listActivities = ActivityList.getActivityList()
         val randomActivity = (0..listActivities.size).random()
         val activity = listActivities[randomActivity]
+        putExtraInfo(intent, activity)
+        startActivity(intent)
+    }
+
+    private fun putExtraInfo(intent: Intent, activity: ActivityModel) {
         intent.putExtra(Constants.KEY.ID_ACTIVITY, activity.id)
         intent.putExtra(Constants.KEY.CATEGORY_ACTIVITY, activity.category)
         intent.putExtra(Constants.KEY.DESCRIPTION_ACTIVITY, activity.description)
         intent.putExtra(Constants.KEY.PARTICIPANTS_ACTIVITY, activity.participants)
         intent.putExtra(Constants.KEY.PRICE_ACTIVITY, activity.price)
-        startActivity(intent)
-
     }
 }

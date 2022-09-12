@@ -20,18 +20,18 @@
         android:textStyle="bold" />
 
     <TextView
-        android:layout_marginTop="128dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
         android:text="@string/app_participants"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edit_number_participants"
-        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@color/white"
         android:elevation="5dp"
         android:inputType="number"
@@ -39,21 +39,21 @@
 
     <Button
         android:id="@+id/button_start"
-        android:layout_marginTop="128dp"
         android:layout_width="match_parent"
-        android:text="@string/app_start"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
         android:backgroundTint="@color/dark_blue_background"
-        android:textSize="24sp"
-        android:layout_height="wrap_content"/>
+        android:text="@string/app_start"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/text_terms"
-        android:layout_marginTop="16dp"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
         android:text="@string/button_terms_and_conditions"
-        android:layout_height="wrap_content"/>
+        android:textStyle="bold" />
 
 
 </LinearLayout>

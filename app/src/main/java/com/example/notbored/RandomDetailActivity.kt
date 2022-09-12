@@ -25,7 +25,8 @@ class RandomDetailActivity : AppCompatActivity() {
     }
 
     private fun getInfo() {
-        val numberParticipants = Preferences(this).getParticipants(Constants.PREFERENCES.PARTICIPANTS_KEY)
+        val numberParticipants =
+            Preferences(this).getParticipants(Constants.PREFERENCES.PARTICIPANTS_KEY)
         val category = intent.getStringExtra(Constants.KEY.CATEGORY_ACTIVITY)
         val description = intent.getStringExtra(Constants.KEY.DESCRIPTION_ACTIVITY)
         val price = intent.getStringExtra(Constants.KEY.PRICE_ACTIVITY)
@@ -37,10 +38,12 @@ class RandomDetailActivity : AppCompatActivity() {
     }
 
     private fun getInfoTryAnother() {
-        val numberParticipants = Preferences(this).getParticipants(Constants.PREFERENCES.PARTICIPANTS_KEY)
+        val numberParticipants =
+            Preferences(this).getParticipants(Constants.PREFERENCES.PARTICIPANTS_KEY)
         val listActivities = ActivityList.getActivityList()
         val randomActivity = (0..listActivities.size).random()
         val activity = getNewActivity(randomActivity)
+
         if (activity != null) {
             binding.textCategory.text = activity.category
             binding.textDescription.text = activity.description

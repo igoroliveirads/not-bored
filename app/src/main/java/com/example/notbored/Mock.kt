@@ -1,6 +1,12 @@
 package com.example.notbored
 
-data class ActivityModel(val id: Int, val category: String, val description: String, val participants: Int, val price: String)
+data class ActivityModel(
+    val id: Int,
+    val category: String,
+    val description: String,
+    val participants: Int,
+    val price: String
+)
 
 object ActivityList {
     fun getActivityList(): List<ActivityModel> {

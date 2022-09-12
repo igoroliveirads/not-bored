@@ -28,10 +28,13 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, TermsAndConditionsActivity::class.java))
     }
 
-    private fun handleStart(){
+    private fun handleStart() {
         val numberParticipants = binding.editNumberParticipants.text.toString()
-        if (numberParticipants != "0" && numberParticipants.isNotEmpty()){
-            Preferences(this).saveParticipants(Constants.PREFERENCES.PARTICIPANTS_KEY, numberParticipants)
+        if (numberParticipants != "0" && numberParticipants.isNotEmpty()) {
+            Preferences(this).saveParticipants(
+                Constants.PREFERENCES.PARTICIPANTS_KEY,
+                numberParticipants
+            )
             val intent = Intent(this, ActivitiesListActivity::class.java)
             startActivity(intent)
         } else {
