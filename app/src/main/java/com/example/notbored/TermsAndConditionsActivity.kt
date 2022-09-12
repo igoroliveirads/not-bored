@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.notbored.databinding.ActivityTermsAndConditionsBinding
 
-class TermsAndConditionsActivity : AppCompatActivity(), View.OnClickListener {
+class TermsAndConditionsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityTermsAndConditionsBinding
 
@@ -14,18 +14,9 @@ class TermsAndConditionsActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityTermsAndConditionsBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.imageClose.setOnClickListener(this)
-        supportActionBar?.hide()
-    }
 
-    override fun onClick(view: View) {
-        if (view.id == R.id.image_close){
-            handleClose()
+        binding.imageClose.setOnClickListener {
+            finish()
         }
-    }
-
-    private fun handleClose(){
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
     }
 }
