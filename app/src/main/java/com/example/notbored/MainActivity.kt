@@ -3,6 +3,7 @@ package com.example.notbored
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.notbored.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,8 +30,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun handleStart(){
         val numberParticipants = binding.editNumberParticipants.text.toString()
-        Preferences(this).saveParticipants(Constants.PREFERENCES.PARTICIPANTS_KEY, numberParticipants)
-        val intent = Intent(this, ActivitiesListActivity::class.java)
-        startActivity(intent)
+        if (numberParticipants != "0" && numberParticipants.isNotEmpty()){
+            Preferences(this).saveParticipants(Constants.PREFERENCES.PARTICIPANTS_KEY, numberParticipants)
+            val intent = Intent(this, ActivitiesListActivity::class.java)
+            startActivity(intent)
+        } else {
+            Toast.makeText(this, "Insira a número de participantes", Toast.LENGTH_LONG).show()
+        }
     }
 }

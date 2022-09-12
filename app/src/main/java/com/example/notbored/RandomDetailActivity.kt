@@ -25,33 +25,34 @@ class RandomDetailActivity : AppCompatActivity() {
     }
 
     private fun getInfo() {
+        val numberParticipants = Preferences(this).getParticipants(Constants.PREFERENCES.PARTICIPANTS_KEY)
         val category = intent.getStringExtra(Constants.KEY.CATEGORY_ACTIVITY)
         val description = intent.getStringExtra(Constants.KEY.DESCRIPTION_ACTIVITY)
-        val participants = intent.getIntExtra(Constants.KEY.PARTICIPANTS_ACTIVITY, 0)
         val price = intent.getStringExtra(Constants.KEY.PRICE_ACTIVITY)
 
         binding.textCategory.text = category
         binding.textDescription.text = description
-        binding.textNumberParticipants.text = participants.toString()
+        binding.textNumberParticipants.text = numberParticipants
         binding.textLevelPrice.text = price
     }
 
     private fun getInfoTryAnother() {
+        val numberParticipants = Preferences(this).getParticipants(Constants.PREFERENCES.PARTICIPANTS_KEY)
         val listActivities = ActivityList.getActivityList()
         val randomActivity = (0..listActivities.size).random()
         val activity = getNewActivity(randomActivity)
         if (activity != null) {
             binding.textCategory.text = activity.category
             binding.textDescription.text = activity.description
-            binding.textNumberParticipants.text = activity.participants.toString()
+            binding.textNumberParticipants.text = numberParticipants
             binding.textLevelPrice.text = activity.price
-            }
         }
     }
 
     private fun getNewActivity(id: Int): ActivityModel? {
         val activitiesList = ActivityList.getActivityList()
         activitiesList.let { activity ->
-            return activity.firstOrNull{ it.id == id}
+            return activity.firstOrNull { it.id == id }
         }
+    }
 }
