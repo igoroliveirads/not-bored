@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">NotBored</string>
+    <string name="app_title">Not Bored</string>
+    <string name="app_participants">Participants</string>
+    <string name="app_start">Start</string>
+    <string name="button_terms_and_conditions">Terms and conditions</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
+    <string name="paragraph_1">Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos ridiculus iaculis, nullam ligula elementum duis tellus maecenas nec fermentum sed dictum laoreet, taciti donec habitant quam purus ultricies porta posuere sociis. Cubilia senectus netus integer tempor dignissim viverra nostra tellus scelerisque aliquet, semper penatibus tempus sociosqu class sociis bibendum justo etiam, rutrum aenean et eget pretium volutpat eu dictum dictumst.</string>
+    <string name="menu_activities">Activities</string>
+    <string name="menu_random">Random</string>
+    <string name="activity_description">Activity Description</string>
+    <string name="price">Price</string>
+    <string name="price_level">Medium</string>
+    <string name="try_another">Try Another</string>
+    <string name="menu_activity">Activity Title</string>
+    <string name="category">Category</string>
+    <string name="item">Item</string>
+</resources>

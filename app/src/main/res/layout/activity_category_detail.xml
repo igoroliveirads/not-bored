@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_background"
+    tools:context=".RandomDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/relative_random"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_blue_background"
+        android:padding="32dp">
+
+        <ImageView
+            android:id="@+id/image_back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/text_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/menu_activity"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative_random"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="64dp"
+        android:text="@string/activity_description"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/image_participants"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_below="@+id/text_description"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_person" />
+
+    <TextView
+        android:id="@+id/text_participants"
+        android:layout_marginBottom="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_description"
+        android:layout_toEndOf="@id/image_participants"
+        android:text="@string/app_participants"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_number_participants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_description"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="64dp"
+        android:text="0"
+        android:textSize="28sp" />
+
+    <ImageView
+        android:id="@+id/image_price"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_below="@+id/text_participants"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_random" />
+
+    <TextView
+        android:id="@+id/text_price"
+        android:layout_marginBottom="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_participants"
+        android:layout_toEndOf="@id/image_price"
+        android:text="@string/price"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_level_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_participants"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="64dp"
+        android:text="@string/price_level"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/button_try_another"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="23dp"
+        android:backgroundTint="@color/dark_blue_background"
+        android:text="@string/try_another" />
+
+</RelativeLayout>
