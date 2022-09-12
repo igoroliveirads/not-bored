@@ -40,20 +40,18 @@ class RandomDetailActivity : AppCompatActivity() {
         val listActivities = ActivityList.getActivityList()
         val randomActivity = (0..listActivities.size).random()
         val activity = getNewActivity(randomActivity)
-
-        binding.textCategory.text = activity?.category
-        binding.textDescription.text = activity?.description
-        binding.textNumberParticipants.text = activity?.participants.toString()
-        binding.textLevelPrice.text = activity?.price
+        if (activity != null) {
+            binding.textCategory.text = activity.category
+            binding.textDescription.text = activity.description
+            binding.textNumberParticipants.text = activity.participants.toString()
+            binding.textLevelPrice.text = activity.price
+            }
+        }
     }
 
     private fun getNewActivity(id: Int): ActivityModel? {
         val activitiesList = ActivityList.getActivityList()
-        for (activity in activitiesList) {
-            if (activity.id == id)
-                return activity
+        activitiesList.let { activity ->
+            return activity.firstOrNull{ it.id == id}
         }
-        return null
-    }
-
 }

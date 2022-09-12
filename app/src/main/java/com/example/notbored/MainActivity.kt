@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding.textTerms.setOnClickListener {
             handleTerms()
         }
+
         binding.buttonStart.setOnClickListener {
             handleStart()
         }

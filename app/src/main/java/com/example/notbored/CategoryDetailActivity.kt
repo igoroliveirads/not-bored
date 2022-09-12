@@ -39,10 +39,12 @@ class CategoryDetailActivity : AppCompatActivity() {
 
     private fun getInfoTryAnother() {
         val activity = getNewActivity()
-        binding.textCategory.text = activity?.category
-        binding.textDescription.text = activity?.description
-        binding.textNumberParticipants.text = activity?.participants.toString()
-        binding.textLevelPrice.text = activity?.price
+        if (activity != null) {
+            binding.textCategory.text = activity.category
+            binding.textDescription.text = activity.description
+            binding.textNumberParticipants.text = activity.participants.toString()
+            binding.textLevelPrice.text = activity.price
+        }
     }
 
     private fun getNewActivity(): ActivityModel? {
@@ -50,11 +52,9 @@ class CategoryDetailActivity : AppCompatActivity() {
         val category = intent.getStringExtra(Constants.KEY.CATEGORY_ACTIVITY)
         val activitiesList = ActivityList.getActivityList()
 
-        for (activity in activitiesList) {
-            if (activity.category == category && activity.id != id)
-                return activity
+        activitiesList.let { activity ->
+            return activity.firstOrNull { it.category == category && it.id != id }
         }
-        return null
     }
 
 }
